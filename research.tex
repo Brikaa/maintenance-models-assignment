@@ -1,4 +1,6 @@
 \documentclass[11pt,a4paper]{article}
+\usepackage{hyperref}
+
 \begin{document}
 
 \title{The definition of different quality attributes and how they are measured}
@@ -14,10 +16,79 @@ and what the quick fix model is and suggests advice to abide by when using the q
 The article assumes the reader already knows what software maintenance means.
 
 \section{What are software maintenance models?}
-Software maintenance models are abstract descriptions of
-the sequence of activities in the software maintenance process,
-the input to each activity, the output produced from each activity
-and, optionally, metrics that can be applied on the outputs of each activity to evaluate the maintenance process
-and functions that can be applied while executing the activities to control the maintenance process.
+Software maintenance models are abstract descriptions of:
+\begin{itemize}
+    \item the sequence of activities in the software maintenance process,
+    \item the inputs to each activity,
+    \item the outputs produced from each activity,
+    \item (optionally) metrics that can be applied on the outputs of each activity to evaluate the maintenance process,
+        and
+    \item (optionally) functions that can be applied while executing the activities to control the maintenance process.
+\end{itemize}
+
+\section{Why do we study software maintenance models?}
+The reason behind studying software maintenance can be looked at from two points of views:
+\begin{itemize}
+    \item the scientific point of view: to describe the maintenance process, and
+    \item the engineering point of view: to prescribe enhancements to the maintenance process.
+\end{itemize}
+Both of these points of views fall under the general point of view: to write better software.
+
+\subsection{The scientific point of view: to describe}
+This point of view looks at the software maintenance process in general.
+It tries to produce conceptual models of the maintenance process and to research the produced models
+so as to understand them, extend them and suggest better alternatives to them.
+
+\subsection{The engineering point of view: to prescribe}
+This point of view looks at the software maintenance process in a certain organization.
+An organization studies well-known maintenance models that have proven to be successful in other organizations.
+It then tries to incorporate such models into its workflow.
+Moreover, studying different models also helps the organization decide on which one to use in a new project based on
+the properties of the model and the project.
+
+\subsection{The general point of view: to write better software}
+The ultimate goal behind the scientific and the engineering point of view is to
+reduce the cost of software maintenance in the long-run,
+and to increase the speed and ease of future maintenance leading to more efficient maintenance and better software.
+
+\section{What is the quick fix model?}
+It is a software maintenance model in which the sequence of activities, their inputs and their outputs are as follows:
+\begin{itemize}
+    \item Modify the code as soon as a problem is discovered or a change is needed
+    \subitem Input: old source code
+    \subitem Output: source code after implementing the change
+    \item Modify of the accompanying documentation to correspond to the code change
+    \subitem Input: old documentation
+    \subitem Output: updated documentation that is consistent with the new source code
+\end{itemize}
+It is used in organizations facing tight deadlines and lack of resources
+in order to avoid the cost and time of a full maintenance lifecycle.
+
+\section{Advice when using the quick fix model}
+The following pieces of advice do not try to change the core principles of the quick fix model.
+They suggest actions to do in order to mitigate some of its problems.
+
+\subsection{Advice to prevent code degradation}
+One of the problems of the quick fix model is that no attention is paid to the overall structure of the code.
+This leads to code degradation after each iteration in the quick fix model.
+One advice to mitigate this problem is to
+allocate a known time of the month or the week to restructure or refactor the code.
+It could be a time when the organization has free resources and few deadlines.
+
+Another advice is to get developers who thoroughly understand
+the overall structure of the code to review the code changes before merging them.
+This prevents changes that are inconsistent with the overall code structure from getting into the codebase
+
+\subsection{Advice to keep the documentation updated}
+Another problem of the quick fix model is that it is easy to skip modifying the documentation
+after doing the code changes.
+This leads to outdated documentation that is misleading to new team members.
+Similar to the previous problem, one possible mitigation is to
+allocate a know time of the month or the week to update the documentation.
+
+Another mitigation is to give a certain developer, or group of developers, the responsibility of updating the
+documentation rather than making documentation updating a weak rule that developers may or may not follow.
+
+Moreover, it helps to use automated tools that generate documentation from source code and comments.
 
 \end{document}

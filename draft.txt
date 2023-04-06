@@ -15,7 +15,7 @@
         - Studying well-known maintenance models that have been proven to help in the success of organizations,
         can help organizations adopt such models and enhance the models they currently use
         - Can help organizations choose the suitable maintenance models for their project types
-    - Better software (overall point of view)
+    - Better software (general point of view)
         - Faster maintenance
         - Easier maintenance
         - More cost-effective maintenance in the long-run
