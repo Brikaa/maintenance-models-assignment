@@ -1,0 +1,46 @@
+- What are maintenance model?
+    - Abstract descriptions of:
+        - Sequence of activities in a maintenance process
+        - Input each activity receives
+        - Output each activity produces
+        - (Optionally) metrics that can be applied on the outputs of each activity to evaluate the maintenance process
+        - (Optionally) functions that can be applied while executing the activities to
+        control the maintenance process
+
+- Why do we study maintenance models?
+    - Describe (scientific point of view)
+        - Describing the maintenance process abstractly helps us come up with new models and suggest modifications and
+        extensions to existing models
+    - Prescribe (engineering point of view)
+        - Studying well-known maintenance models that have been proven to help in the success of organizations,
+        can help organizations adopt such models and enhance the models they currently use
+        - Can help organizations choose the suitable maintenance models for their project types
+    - Better software (overall point of view)
+        - Faster maintenance
+        - Easier maintenance
+        - More cost-effective maintenance in the long-run
+
+- What is the quick fix model?
+    - Modifying the code as soon as a problem is discovered or a change is needed
+    - Then modifying the accompanying documentation
+    - Used in organizations facing tight deadlines and lack of resources
+    - Activity: modify the code to respond to a maintenance request, input: old code, output: new code
+    - Activity: modify all of the accompanying documentation to correspond to the code change
+        input: old documentation, output: new documentation
+
+- Advice when using the quick fix model
+    - Will not suggest advice that change the core concepts of the model
+    - Problem: no attention is paid to the overall structure of the code
+    - Result: code degradation after each quick fix cycle
+    - Advice:
+        - Allocating a known time of the month or the week to restructure or refactor the code
+            - Could be a time where there are few deadlines and free resources
+        - Getting people who thoroughly understand the overall structure of the code to review the code changes
+            before merging them
+
+    - Problem: it is easy to skip modifying the documentation after doing the code changes
+    - Result: outdated documentation that is misleading to new team members
+    - Advice:
+        - Allocating a know time of the month or the week to update the documentation
+        - Giving a certain developer or group of developers the responsibility of updating the documentation
+        - Usage of automatic tools that generate documentation from source code
